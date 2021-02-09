@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jpatest.jpatest.service.PostsService;
+import com.jpatest.jpatest.web.dto.PostsResponseDto;
 import com.jpatest.jpatest.web.dto.PostsSaveRequestDto;
+import com.jpatest.jpatest.web.dto.PostsUpdateRequestDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,21 +25,13 @@ public class PostsApiController {
 		return postsService.save(requestDto);
 	}
 	
-//	@PutMapping("/api/v1/posts/{id}")
-//	public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
-//		return postsService.update(id, requestDto);
-//		
-//		@GetMapping("/api/v1/posta/{id}")
-//		public PostsResponseDto findById (@PathVariable Long id) {
-//			return postsService.findById()
-//		}
-//		@GetMapping("/api/v1/posta/{id}")
-//		public PostsResponseDto findById (@PathVariable Long id) {
-//			return postsService.findById()
-//		}
-//		@GetMapping("/api/v1/posta/{id}")
-//		public PostsResponseDto findById (@PathVariable Long id) {
-//			return postsService.findById()
-//		}
-//	}
+	@PutMapping("/api/v1/posts/{id}")
+	public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
+		return postsService.update(id, requestDto);
+	}
+		
+	@GetMapping("/api/v1/posta/{id}")
+	public PostsResponseDto findById (@PathVariable Long id) {
+		return postsService.findById(id);
+	}
 }
