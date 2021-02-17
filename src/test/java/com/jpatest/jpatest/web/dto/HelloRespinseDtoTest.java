@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class HelloRespinseDtoTest {
 
 	@Test
-	public void 롬북_기능_테스트() {
+	public void lombok_test() {
 		//given
 		String name = "test";
 		int amount = 1000;
