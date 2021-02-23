@@ -20,7 +20,7 @@ before_install:
 before_deploy:
   - zip -r jpatest *
   - mkdir -p deploy
-    mv jpatest.zip deploy/jpatest.zip
+  - mv jpatest.zip deploy/jpatest.zip
   
 deploy:
   - provider: s3
